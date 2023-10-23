@@ -34,7 +34,7 @@ mod tests {
     #[tokio::test]
     async fn test_get_movie_from_db() {
         // You need to set up a test database or mock it for this test
-        let db = SDBrepo::new().await.unwrap().db;
+        let _db = SDBrepo::new().await.unwrap().db;
 
         // Create a warp filter for the get_movie_from_db endpoint
         let filter = warp::path("api")
@@ -54,14 +54,14 @@ mod tests {
 
         // Assert the response status code and content
         assert_eq!(response.status(), warp::http::StatusCode::OK);
-        let movie: Movie = serde_json::from_slice(response.body()).unwrap();
+        let _movie: Movie = serde_json::from_slice(response.body()).unwrap();
         // Add more assertions based on your test data
     }
 
     #[tokio::test]
     async fn test_get_movies_from_db() {
         // You need to set up a test database or mock it for this test
-        let db = SDBrepo::new().await.unwrap().db;
+        let _db = SDBrepo::new().await.unwrap().db;
 
         // Create a warp filter for the get_movies_from_db endpoint
         let filter = warp::path("api")
@@ -80,14 +80,14 @@ mod tests {
 
         // Assert the response status code and content
         assert_eq!(response.status(), warp::http::StatusCode::OK);
-        let movies: Vec<Movie> = serde_json::from_slice(response.body()).unwrap();
+        let _movies: Vec<Movie> = serde_json::from_slice(response.body()).unwrap();
         // Add more assertions based on your test data
     }
 
     #[tokio::test]
     async fn test_post_review_to_db() {
         // You need to set up a test database or mock it for this test
-        let db = SDBrepo::new().await.unwrap().db;
+        let _db = SDBrepo::new().await.unwrap().db;
 
         // Create a warp filter for the post_review_to_db endpoint
         let filter = warp::path("api")
